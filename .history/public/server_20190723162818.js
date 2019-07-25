@@ -1,24 +1,21 @@
 const http = require('http')
 const fs = require('fs')
 http.createServer(function(req, res){
-    console.log(res)
     console.log('request come ',req.url)
-
-    if(res.url === '/'){
-        console.log('进来了')
+        
+    // if(res.url === '/'){
         const html = fs.readFileSync('test.html','utf8')
         res.writeHead(200,{
             'Content-Type':'text/html'
         })
         res.end(html)
-    }
+    // }
 
-    console.log(req.url)
     // if(res.url === '/script.js'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        res.end('console.log("script loaded")') 
+    //     res.writeHead(200,{
+    //         'Content-Type':'text/javascript'
+    //     })
+    //     res.end('console.log("script loaded")') 
     // }
     
 

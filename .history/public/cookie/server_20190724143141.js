@@ -4,7 +4,7 @@ http.createServer(function(req, res){
     console.log(res)
     console.log('request come ',req.url)
 
-    if(res.url === '/'){
+ 
         console.log('进来了')
         const html = fs.readFileSync('test.html','utf8')
         res.writeHead(200,{
